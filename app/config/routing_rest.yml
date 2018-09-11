@@ -1,0 +1,23 @@
+login:
+    type: rest
+    resource: AppBundle\Controller\RestLoginController
+
+
+password_management:
+    type: rest
+    resource: AppBundle\Controller\RestPasswordManagementController
+
+
+profile:
+    type: rest
+    resource: AppBundle\Controller\RestProfileController
+
+
+registration:
+    type: rest
+    resource: AppBundle\Controller\RestRegistrationController
+
+game:
+    type: rest
+    prefix: /api
+    resource: '@AppBundle/Controller/GameController.php'
