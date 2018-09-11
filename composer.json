@@ -1,5 +1,5 @@
 {
-    "name": "chris/api.rest.user.api.dev",
+    "name": "Boilerplate Symfony3 with JWT Token",
     "description": "an example of integration between FOS REST Bundle and FOS User Bundle",
     "license": "proprietary",
     "type": "project",
