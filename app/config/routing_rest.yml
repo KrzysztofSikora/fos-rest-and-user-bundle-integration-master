@@ -17,7 +17,7 @@ registration:
     type: rest
     resource: AppBundle\Controller\RestRegistrationController
 
-game:
+api:
     type: rest
     prefix: /api
-    resource: '@AppBundle/Controller/GameController.php'
+    resource: '@AppBundle/Controller/ApiController.php'

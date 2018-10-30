@@ -14,6 +14,5 @@ Speaking of this, we will need to ensure our RESTful user login and registration
 
 * Login
 * Password Management
-* Profile Updates
 * Registration
 
