@@ -1,6 +1,6 @@
 # FOS User Bundle with FOS REST Bundle integration
 
-This boiler plate baset at course available at : https://codereviewvideos.com/course/fosuser-fosrest-lexikjwt-user-login-registration-api
+This boiler plate based on course available at : https://codereviewvideos.com/course/fosuser-fosrest-lexikjwt-user-login-registration-api
 
 RESTful user Registration and Login system using a combination of:
 

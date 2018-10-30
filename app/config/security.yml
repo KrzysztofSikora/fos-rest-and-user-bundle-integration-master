@@ -73,7 +73,7 @@ security:
 
         - { path: ^/ping,             role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/doc,              role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api,             role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api,              role: IS_AUTHENTICATED_FULLY }
 
 
         - { path: ^/login$,           role: IS_AUTHENTICATED_ANONYMOUSLY }

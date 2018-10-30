@@ -6,7 +6,9 @@ use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use FOS\RestBundle\Controller\Annotations as Rest; // Alias for all annotations
+use FOS\RestBundle\Controller\Annotations as Rest;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 class GameController extends FOSRestController
@@ -44,4 +46,41 @@ class GameController extends FOSRestController
 	public function postGameAction(Request $request){
 		return new JsonResponse(array('status' => 201), Response::HTTP_CREATED);
 	}
+
+    /**
+     * @Rest\View( statusCode=Response::HTTP_OK)
+     * @Rest\Get("/all-users")
+     *
+     */
+    public function getAllUsersAction(Request $request){
+
+        $game = $this->getDoctrine()->getManager()->getRepository('AppBundle:User')->findAll();
+        if(empty($game)){
+            return new JsonResponse(['message' => 'The requested ressource was not found'], Response::HTTP_NOT_FOUND);
+        }
+        return $game;
+
+//        return new JsonResponse(array('status' => 201), Response::HTTP_CREATED);
+    }
+
+    /**
+     * @Rest\View( statusCode=Response::HTTP_OK)
+     * @Rest\Get("/user-detail/{user}")
+     *
+     */
+    public function getUserDetailAction(Request $request){
+
+
+
+       $userId = $request->attributes->get('user');
+
+        $game = $this->getDoctrine()->getManager()->getRepository('AppBundle:User')->find($userId);
+        if(empty($game)){
+            return new JsonResponse(['message' => 'User not found'], Response::HTTP_NOT_FOUND);
+        }
+        return $game;
+
+//        return new JsonResponse(array('status' => 201), Response::HTTP_CREATED);
+    }
+
 }
